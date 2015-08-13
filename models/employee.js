@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 var EmployeeSchema = new Schema({
 	id: { 
 		type: String,
@@ -38,7 +38,6 @@ var EmployeeSchema = new Schema({
 	      type: Number
 	    }
 	  }
-  }
-});
+  });
 
 module.exports = mongoose.model('Employee', EmployeeSchema);

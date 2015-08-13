@@ -139,7 +139,8 @@ var addTeams = function(callback) {
     if (error) {
         console.error('Error: ' + error);
     } else {
-        data.team_id = team1._id;
+        data.team_id = team1[0]._id;
+        console.log(data.team_id);
     }
 
     console.info('Done adding teams');
@@ -152,8 +153,8 @@ var updateEmployeeTeams = function (callback) {
   var team = data.teams[0];
 
   // Set everyone to be on the same team to start
-  Employee.update({}, {
-    team: data.team_id
+  Employee.update({id : { $gt : 0 }}, {
+    $set: { team: data.team_id }
   }, {
     multi: true
   }, function (error, numberAffected, response) {
@@ -166,12 +167,40 @@ var updateEmployeeTeams = function (callback) {
   });
 };
 
+var findTeams = function (callback) {
+  console.info('Finding employee teams');
+
+  Team.find({},function (error, docs) {
+    if (error) {
+      console.error('Error finding employee team: ' + error);
+    }
+
+    console.info(docs);
+    callback();
+  });
+};
+
+var findEmployees = function (callback) {
+  console.info('Finding employees');
+
+  Employee.find({},function (error, docs) {
+    if (error) {
+      console.error('Error finding employees: ' + error);
+    }
+
+    console.info(docs);
+    callback();
+  });
+};
+
 async.series([
   deleteEmployees,
   deleteTeams,
   addEmployees,
   addTeams,
-  updateEmployeeTeams
+  updateEmployeeTeams,
+  findTeams,
+  findEmployees
 ], function(error, results) {
   if (error) {
     console.error('Error: ' + error);

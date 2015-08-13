@@ -27,7 +27,7 @@ function _attachMembers (Employee, result, callback) {
 }
 
 // listen for find and findOne
-TeamSchema.plugin(postFind, {
+TeamSchema.plugin(postfind, {
     find: function (result, callback) {
         var Employee = mongoose.model('Employee');
 
