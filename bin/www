@@ -1,0 +1,13 @@
+var debug = require('debug')('example-server');
+var app = require('../index.js');
+
+// set DEBUG=example-server
+
+// The server listens on port 3000 by default, but that value can be overwritten 
+// by setting an environment variable named PORT. 
+// For example, -if you wanted the server to listen on port 4000, use the command PORT=4000 npm start.
+app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+	debug('Express server listening on port ' + server.address().port);	
+});

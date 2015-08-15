@@ -181,7 +181,7 @@ var findTeams = function (callback) {
 };
 
 var findEmployees = function (callback) {
-  console.info('Finding employees');
+  console.info('Finding teams');
 
   Employee.find({},function (error, docs) {
     if (error) {
@@ -199,8 +199,8 @@ async.series([
   addEmployees,
   addTeams,
   updateEmployeeTeams,
-  findTeams,
-  findEmployees
+  findEmployees,
+  findTeams
 ], function(error, results) {
   if (error) {
     console.error('Error: ' + error);
