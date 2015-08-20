@@ -1,6 +1,11 @@
 <ul class="breadcrumb">
   <li><a href="#employees">Employees</a></li>
+<<<<<<< HEAD
   <li class="active">{{employee.name.last}}, {{employee.name.first}}</li>
+=======
+  <li class="active">{{employee.name.last}}, {{employee.name.first}}
+</li>
+>>>>>>> development
 </ul>
 <div class="panel panel-default clearfix">
   <div class="panel-body">
@@ -11,12 +16,20 @@
     </div>
     <div class="col-xs-12 col-md-4 text-center">
       <h3 class="margin-top-reset">{{employee.name.first}} {{employee.name.last}}</h3>
+<<<<<<< HEAD
       <img ng-src="{{employee.image}}" image-fallback="images/user.png" class="employee-avatar">
+=======
+      <img ng-src="{{employee.image}}" image-fallback= "images/user.png" class="employee-avatar">
+>>>>>>> development
     </div>
     <div class="col-xs-12 col-sm-6 col-md-4 form-offset">
       <div class="form-group">
         <label class="control-label">Employee ID</label>
+<<<<<<< HEAD
         <div>#{{employee.id}}</div>
+=======
+          <div>#{{employee.id}}</div>
+>>>>>>> development
       </div>
       <div class="form-group">
         <label class="control-label">First Name:</label>
@@ -39,7 +52,11 @@
             <span ng-hide="editing">{{line}}</span>
             <div ng-show="editing" class="input-group address-edit">
               <input type="text" class="form-control" ng-model="employee.address.lines[$index]" />
+<<<<<<< HEAD
               <span class="input-group-btn">
+=======
+                        <span class="input-group-btn">
+>>>>>>> development
                 <button ng-click="address.addLine($index)" class="btn btn-success">
                   <i class="fa fa-plus"></i>
                 </button>
@@ -65,4 +82,8 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> development
