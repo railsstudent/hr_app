@@ -112,8 +112,12 @@ app.controller('EmployeesCtrl', ['$scope', 'EmployeeService', function($scope, s
   }, _handleError);
 }]);
 
+<<<<<<< 6c5ade1ea2a8b08330a032d812c7f12e1c8b99cb
 app.controller('EmployeeCtrl', ['$scope', '$routeParams', 
   'EmployeeService', 'TeamService', '$q', 'config', '$route',
+=======
+app.controller('EmployeeCtrl', ['$scope', '$routeParams', 'EmployeeService', 'TeamService', '$q', 'config', '$route',
+>>>>>>> add angular to app
   function($scope, $routeParams, employee, team, $q, config, $route) {
 
     $scope.address = {};
