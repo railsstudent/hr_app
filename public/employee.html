@@ -28,6 +28,7 @@
       </div>
       <div class="form-group">
         <label>Team:</label>
+        <a ng-href="#teams/{{employee.team._id}}">(Show team)</a>
         <edit-in-line value="employee.team" editing="editing" edit-list="teams" edit-option="t.name for t in teams" 
             edit-type="select" display-value="employee.team.name" />
       </div>
